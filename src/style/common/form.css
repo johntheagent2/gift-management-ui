@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .form-container {
   min-height: 100vh;
@@ -28,7 +28,7 @@
   color: #333;
 }
 .wrapper h2::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -82,6 +82,14 @@ form h3 {
   background: #0d2944;
   cursor: pointer;
 }
+.login-form-button {
+  background: #f3b3c0;
+}
+
+.login-form-button:hover {
+  background: #d98ca2 !important;
+}
+
 .input-box.button input:hover {
   background: #f3b3c0;
 }

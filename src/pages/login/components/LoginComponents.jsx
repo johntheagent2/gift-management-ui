@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import * as yup from "yup";
-import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Form, Input, Modal, Spin } from "antd";
-import { useNavigate } from "react-router-dom";
-import FormField from "../../../common/components/FormField";
+import React, { useState } from 'react';
+import * as yup from 'yup';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, Form, Input, Modal, Spin } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import FormField from '../../../common/components/FormField';
 
 export const LoginComponents = () => {
   const validationSchema = yup.object({
@@ -12,20 +12,20 @@ export const LoginComponents = () => {
       .string()
       .matches(
         /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-        "Please enter the right email format"
+        'Please enter the right email format'
       )
-      .required("Please enter your email"),
+      .required('Please enter your email'),
     password: yup
       .string()
-      // .matches(
-      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,16}$/,
-      //   "Minimum eight characters, at least one letter and one number"
-      // )
-      .required("Please enter your password"),
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,16}$/,
+        'Minimum eight characters, at least one letter and one number'
+      )
+      .required('Please enter your password'),
   });
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  const [modalContent, setModalContent] = useState('');
   const [isRedirectLogin, setRedirectLogin] = useState(false);
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ export const LoginComponents = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(validationSchema),
-    mode: "onChange",
+    mode: 'onChange',
   });
 
   const onSubmit = async (data) => {
@@ -69,8 +69,8 @@ export const LoginComponents = () => {
         <h2>Login</h2>
         <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
           <FormField
-            name="email"
-            label="Email"
+            name="username"
+            label="Username"
             control={control}
             errors={errors}
           />
@@ -82,7 +82,7 @@ export const LoginComponents = () => {
           />
           <Form.Item className="register-or">
             <Button
-              classNames="submit button"
+              classNames="submit"
               type="primary"
               htmlType="submit"
               npm
@@ -93,9 +93,6 @@ export const LoginComponents = () => {
             >
               Login
             </Button>
-            <p style={{ textAlign: "center" }}>
-              Or <a onClick={() => navigate("/register")}>Register</a>
-            </p>
           </Form.Item>
         </Form>
       </div>
