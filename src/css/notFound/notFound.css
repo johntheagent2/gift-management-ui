@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+/* Variables */
+:root {
+  --bg: #4070f4;
+  --ghost: #528cce;
+  --heading: #e7ebf2;
+}
+
+/* Global Box Sizing */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  background-color: var(--bg);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Main Container Styles */
+.not-found-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Heading 1 Styles */
+h1 {
+  color: var(--heading);
+  font-size: 12.5rem;
+  letter-spacing: 0.1em;
+  margin: 0.025em 0;
+  text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 30rem) {
+  h1 {
+    font-size: 8.5rem;
+  }
+}
+
+/* Animated Span within Heading 1 */
+h1 > span {
+  animation: spooky 2s alternate infinite linear;
+  color: var(--ghost);
+  display: inline-block;
+}
+
+/* Heading 2 Styles */
+h2 {
+  color: var(--heading);
+  margin-bottom: 0.4em;
+}
+
+/* Paragraph Styles */
+p {
+  color: #ccc;
+  margin-top: 0;
+}
+
+/* Keyframes for Animation */
+@keyframes spooky {
+  from {
+    transform: translateY(0.15em) scaleY(0.95);
+  }
+
+  to {
+    transform: translateY(-0.15em);
+  }
+}

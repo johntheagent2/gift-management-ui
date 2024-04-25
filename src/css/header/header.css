@@ -1,0 +1,23 @@
+.header {
+  height: fit-content;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-content .companyname-header {
+  font-size: 1.2em;
+  color: aliceblue;
+}
+
+.user-picture {
+  background-color: rgb(148, 148, 148);
+  margin-left: 10px;
+}
+
+.header-content .username-header {
+  color: aliceblue;
+  font-size: 0.8em;
+}
