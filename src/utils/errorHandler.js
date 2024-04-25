@@ -1,4 +1,4 @@
-import errors from "../errors.json";
+import errors from '../errors';
 
 const errorHandler = (message) => {
   return errors[message];

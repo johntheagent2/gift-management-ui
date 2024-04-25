@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import customCreateAsyncThunk from "./createCustomAsyncThunk";
+import { createSlice } from '@reduxjs/toolkit';
+import customCreateAsyncThunk from './createCustomAsyncThunk';
 
 export const authenticate = customCreateAsyncThunk.createAsyncThunkWithLoading(
-  "auth/login",
-  "POST",
-  "api/auth"
+  'auth/login',
+  'POST',
+  'api/v1/common/authenticate'
 );
 
 export const logout = customCreateAsyncThunk.createAsyncThunkWithLoading(
-  "auth/logout",
-  "POST",
-  "api/logout"
+  'auth/logout',
+  'POST',
+  'api/logout'
 );
 
 const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: {
     data: null,
     error: null,
